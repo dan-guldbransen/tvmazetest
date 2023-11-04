@@ -1,0 +1,13 @@
+.maze-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-right: 75px;
+}
+
+@media (max-width: 768px) {
+  .maze-logo {
+    margin-right: 0;
+    width: 150px;
+  }
+}
