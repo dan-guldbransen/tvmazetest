@@ -44,7 +44,6 @@ const App = () => {
         />
         <Route path='*' element={<h2>Not Found</h2>} />;
       </Routes>
-      {console.log(shows)};
     </>
   );
 };
