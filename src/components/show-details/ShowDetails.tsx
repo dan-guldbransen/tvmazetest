@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import Logo from '../logo/Logo';
+import BackArrow from '../../assets/icons/back-arrow.svg';
 
 import './showDetails.css';
 
@@ -33,10 +34,19 @@ const ShowDetails = ({ shows }: IShowDetails) => {
 
   return (
     <>
-      <Logo />
+      <div className='show-details-header'>
+        <Logo />
+
+        <a href='/' className='show-back-button-link'>
+          <div className='show-back-button'>
+            <img src={BackArrow} alt='Back arrow' />
+            <p className='show-back-button-text'>Back to search</p>
+          </div>
+        </a>
+      </div>
       <div className='show-details-container'>
         <div className='show-details'>
-          <div className='show-details-image'>
+          <div className='show-details-image-container'>
             <img alt={currentShow?.name} src={currentShow?.image.original} />
           </div>
           <div className='show-details-info'>
@@ -70,11 +80,6 @@ const ShowDetails = ({ shows }: IShowDetails) => {
             >
               {currentShow?.officialSite ? `${currentShow?.officialSite}` : ''}
             </a>
-            <div className='show-details-button-wrapper'>
-              <a href='/' className='show-back-button-link'>
-                <button className='show-back-button'>Back to search</button>
-              </a>
-            </div>
           </div>
         </div>
       </div>
