@@ -2,29 +2,8 @@ import { useParams } from 'react-router-dom';
 import Logo from '../logo/Logo';
 import BackArrow from '../../assets/icons/back-arrow.svg';
 
+import { IShowDetails } from '../../interfaces';
 import './showDetails.css';
-
-interface IShowDetails {
-  shows: {
-    id: number;
-    name: string;
-    image: {
-      medium: string;
-      original: string;
-    };
-    summary: string;
-    genres: string[];
-    officialSite: string;
-    rating: {
-      average: number;
-    };
-    premiered: string;
-    language: string;
-    network: {
-      name: string;
-    };
-  }[];
-}
 
 const ShowDetails = ({ shows }: IShowDetails) => {
   const show = useParams();
@@ -32,24 +11,30 @@ const ShowDetails = ({ shows }: IShowDetails) => {
     (targetShow) => targetShow.id === Number(show.id)
   );
 
+  console.log(currentShow);
   return (
     <>
       <div className='show-details-header'>
         <Logo />
 
         <a href='/' className='show-back-button-link'>
-          <div className='show-back-button'>
+          <button className='show-back-button'>
             <img src={BackArrow} alt='Back arrow' />
             <p className='show-back-button-text'>Back to search</p>
-          </div>
+          </button>
         </a>
       </div>
+
       <div className='show-details-container'>
-        <div className='show-details'>
-          <div className='show-details-image-container'>
-            <img alt={currentShow?.name} src={currentShow?.image.original} />
-          </div>
-          <div className='show-details-info'>
+        <ul className='show-details'>
+          <li className='show-details-image-container'>
+            <img
+              alt={currentShow?.name}
+              src={currentShow?.image.medium}
+              className='show-details-image'
+            />
+          </li>
+          <li className='show-details-info'>
             <h2 className='show-header-text'>{currentShow?.name}</h2>
             <p className='show-genre-text'>{currentShow?.genres.join(', ')}</p>
             <p className='show-summary'>{currentShow?.summary}</p>
@@ -80,8 +65,8 @@ const ShowDetails = ({ shows }: IShowDetails) => {
             >
               {currentShow?.officialSite ? `${currentShow?.officialSite}` : ''}
             </a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </>
   );

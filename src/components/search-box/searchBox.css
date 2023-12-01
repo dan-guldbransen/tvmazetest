@@ -1,14 +1,15 @@
 .search-box-container {
   width: 100%;
   background: #1c1c1c;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: 0 auto;
 }
 
 .search-box-wrapper {
   width: 100%;
-  max-width: 85vw;
+  max-width: 1400px;
   display: flex;
   align-items: center;
 }

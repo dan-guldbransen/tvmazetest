@@ -1,11 +1,7 @@
 import Logo from '../logo/Logo';
 
+import { ISearchBox } from '../../interfaces';
 import './searchBox.css';
-
-interface ISearchBox {
-  placeholder?: string;
-  onChangeHandler?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const SearchBox = ({ placeholder, onChangeHandler }: ISearchBox) => (
   <div className='search-box-container'>

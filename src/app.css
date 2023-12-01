@@ -9,3 +9,7 @@ body {
   text-align: center;
   background-color: #1c1c1c;
 }
+
+.app-container {
+  margin: 20px;
+}

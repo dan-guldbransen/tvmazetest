@@ -2,12 +2,12 @@
   max-width: 100%;
   height: auto;
   display: block;
-  margin-right: 75px;
+  margin-right: 50px;
 }
 
 @media (max-width: 768px) {
   .maze-logo {
     margin-right: 0;
-    width: 150px;
+    width: 200px;
   }
 }
