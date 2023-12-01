@@ -4,14 +4,14 @@ import Star from '../../assets/icons/star.svg';
 import { ICard } from '../../interfaces';
 import './card.css';
 
-const Card = ({ id, name, image, rating }: any) => {
+const Card = ({ image, id, name, rating }: ICard) => {
   if (!image) {
     return null;
   }
 
   return (
-    <Link className='card' to={`/show-details/${id}`} key={id}>
-      <ul className='card-container'>
+    <Link className='card' to={`/show-details/${id}`}>
+      <ul className='card-container' tabIndex={2}>
         <li className='card-image-container'>
           <img alt={name} src={image.medium} className='card-image' />
         </li>

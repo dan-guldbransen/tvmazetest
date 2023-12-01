@@ -24,9 +24,10 @@ const App = () => {
         `https://api.tvmaze.com/search/shows?q=${searchFieldString}`
       );
       const data = await response.json();
+      const newList = data.map((item: { show: IShow[] }) => item.show);
 
       if (response.ok) {
-        setShows(data);
+        setShows(newList);
       } else {
         console.error(
           `Error fetching search results. Status: ${response.status}`

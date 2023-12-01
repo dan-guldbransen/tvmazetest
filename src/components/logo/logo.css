@@ -9,5 +9,7 @@
   .maze-logo {
     margin-right: 0;
     width: 200px;
+    display: flex;
+    justify-self: center;
   }
 }

@@ -5,7 +5,7 @@ import './searchBox.css';
 
 const SearchBox = ({ placeholder, onChangeHandler }: ISearchBox) => (
   <div className='search-box-container'>
-    <div className='search-box-wrapper'>
+    <div className='search-box-wrapper' tabIndex={1}>
       <Logo />
       <input
         className={'search-box'}

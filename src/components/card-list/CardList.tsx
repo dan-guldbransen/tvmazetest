@@ -5,6 +5,7 @@ import { ICardList } from '../../interfaces';
 import './cardList.css';
 
 const CardList = ({ shows, onSearchChange }: ICardList) => {
+  console.log('shows', shows);
   return (
     <>
       <SearchBox
@@ -13,9 +14,9 @@ const CardList = ({ shows, onSearchChange }: ICardList) => {
       />
 
       <div className='card-list'>
-        {shows?.map((s) => {
-          return <Card {...s.show} />;
-        })}
+        {shows?.map((s, i) => (
+          <Card key={i} {...s} />
+        ))}
       </div>
     </>
   );

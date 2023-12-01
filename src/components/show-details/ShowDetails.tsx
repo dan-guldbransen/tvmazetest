@@ -2,23 +2,22 @@ import { useParams } from 'react-router-dom';
 import Logo from '../logo/Logo';
 import BackArrow from '../../assets/icons/back-arrow.svg';
 
-import { IShowDetails } from '../../interfaces';
+import { IShow } from '../../interfaces';
 import './showDetails.css';
 
-const ShowDetails = ({ shows }: IShowDetails) => {
+const ShowDetails = ({ shows }: { shows: IShow[] }) => {
   const show = useParams();
   const currentShow = shows.find(
     (targetShow) => targetShow.id === Number(show.id)
   );
 
-  console.log(currentShow);
   return (
     <>
       <div className='show-details-header'>
         <Logo />
 
         <a href='/' className='show-back-button-link'>
-          <button className='show-back-button'>
+          <button className='show-back-button' tabIndex={3}>
             <img src={BackArrow} alt='Back arrow' />
             <p className='show-back-button-text'>Back to search</p>
           </button>
@@ -27,14 +26,14 @@ const ShowDetails = ({ shows }: IShowDetails) => {
 
       <div className='show-details-container'>
         <ul className='show-details'>
-          <li className='show-details-image-container'>
+          <li className='show-details-image-container' tabIndex={4}>
             <img
               alt={currentShow?.name}
               src={currentShow?.image.medium}
               className='show-details-image'
             />
           </li>
-          <li className='show-details-info'>
+          <li className='show-details-info' tabIndex={5}>
             <h2 className='show-header-text'>{currentShow?.name}</h2>
             <p className='show-genre-text'>{currentShow?.genres.join(', ')}</p>
             <p className='show-summary'>{currentShow?.summary}</p>
