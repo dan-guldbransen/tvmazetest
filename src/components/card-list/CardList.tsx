@@ -5,7 +5,6 @@ import { ICardList } from '../../interfaces';
 import './cardList.css';
 
 const CardList = ({ shows, onSearchChange }: ICardList) => {
-  console.log('shows', shows);
   return (
     <>
       <SearchBox
